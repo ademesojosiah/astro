@@ -5,7 +5,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/User');
 const { Unauthorized } = require('../errors/unauthorized');
 
-const jwtSecret = process.env.JWT_SECRET;
+const jwtSecret = process.env.JWT_SECRET || "secret";
 
 var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
